@@ -82,6 +82,11 @@ public class DynatraceModule extends ReactContextBaseJavaModule {
         promise.resolve(Dynatrace.getRequestTagHeader());
     }
 
+    @ReactMethod
+    public void identifyUser(String user) {
+        Dynatrace.identifyUser(user);
+    }
+
     private void newAction(String name, int key, DTXAction parent) throws Exception {
         if (name == null) throw new Exception("action name is null");
 

@@ -73,6 +73,11 @@ RCT_REMAP_METHOD(getRequestTag, getRequestTagWithResolver:(RCTPromiseResolveBloc
   resolve([Dynatrace getRequestTagValueForURL:nil]);
 }
 
+RCT_EXPORT_METHOD(identifyUser:(NSString *)user)
+{
+  [Dynatrace identifyUser:user];
+}
+
 - (void) newAction:(NSString *)name key:(NSNumber *)key parentAction:(DTXAction *)parentAction
 {
   DTXAction *action = [DTXAction enterActionWithName:name parentAction:parentAction];

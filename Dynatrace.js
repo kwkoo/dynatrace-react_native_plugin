@@ -34,6 +34,10 @@ export default class Dynatrace {
     endVisit() {
         NativeModules.DynatraceUEM.endVisit();
     }
+
+    identifyUser(user) {
+        NativeModules.DynatraceUEM.identifyUser(user);
+    }
   
     getCounter() {
         return this.counter++;
