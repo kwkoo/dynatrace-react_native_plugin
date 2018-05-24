@@ -4,8 +4,19 @@
 Copy the following files into the project:
 
 * Copy the plugin Java files to: `android/app/src/main/java/com/dynatrace/plugin/`
-* Copy the ADK `Dynatrace.jar` file to: `android/app/libs/`
 * Add `Dynatrace.js` and `dynafetch.js` to the project directory (the same directory as `index.android.js`.
+
+If you are using gradle to instrument your app, insert the following into `android/app/build.gradle`:
+
+````
+dependencies {
+  compile dynatrace.agent()
+}
+````
+
+Please note that the snippet above applies to gradle version 2.x. If you are using gradle 3.0 and above, use `implementation` instead of `compile`.
+
+If you are using the command line to instrument your app, copy `Dynatrace.jar` from the ADK to `android/app/libs/`.
 
 Modify `android/app/src/main/java/.../MainApplication.java` to load `com.dynatrace.plugin.DynatraceReactPackage`:
 
