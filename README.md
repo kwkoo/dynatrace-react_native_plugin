@@ -101,7 +101,7 @@ Dynatrace uses different keys from App Mon in the `Info.plist`. To get the value
 
 While you're editing `Info.plist`, it may also be a good idea to set the following keys:
 
-* `DTXLogLevel` to `ALL`
+* `DTXLogLevel` to `ALL` (note that this only applies to non-production apps - you should use a less verbose setting for production apps)
 * `DTXSendEmptyAutoAction` to `YES`
 
 Copy the `Dynatrace.js` and `dynafetch.js` files to the project directory if you haven't already done so.
