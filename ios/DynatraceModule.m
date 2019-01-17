@@ -81,7 +81,10 @@ RCT_EXPORT_METHOD(identifyUser:(NSString *)user)
 - (void) newAction:(NSString *)name key:(NSNumber *)key parentAction:(DTXAction *)parentAction
 {
   DTXAction *action = [DTXAction enterActionWithName:name parentAction:parentAction];
-  [actionDict setObject:action forKey:key];
+  if (action)
+  {
+    [actionDict setObject:action forKey:key];
+  }
 }
 
 - (DTXAction *) getAction:(NSNumber *)key
@@ -89,5 +92,11 @@ RCT_EXPORT_METHOD(identifyUser:(NSString *)user)
   return [actionDict objectForKey:key];
 }
 
+  
++ (BOOL)requiresMainQueueSetup
+{
+  return YES;
+}
+  
 @end
 
